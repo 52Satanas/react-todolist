@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-function NewTodoForm() {
+function NewTodoForm( {addTodo}) {
 
     const [todo,setTodo] = useState({
         id: "",
@@ -17,6 +17,7 @@ function NewTodoForm() {
     function handleSubmit(e) {
         e.preventDefault();
         if (todo.description.trim()) {
+            addTodo({...todo, id:uuidv4()} )
             setTodo({ ...todo, description:"" });
         }
 
@@ -29,7 +30,7 @@ function NewTodoForm() {
         value={todo.description}
         onChange={handleTodoInput}
         />
-        <button type="submit" />
+        <button type="submit" >Add</button>
     </form>
 }
 
