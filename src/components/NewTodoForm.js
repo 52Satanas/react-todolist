@@ -27,6 +27,7 @@ function NewTodoForm( {addTodo}) {
         <input
         name="newTodo"
         type="text"
+        height= "100 px" 
         value={todo.description}
         onChange={handleTodoInput}
         />

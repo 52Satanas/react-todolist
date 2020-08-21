@@ -25,12 +25,27 @@ function App() {
     return setTodos([todo, ...todos]);
  }
 
+
+function setCompleted(id) {
+   setTodos(
+    todos.map( todo => {
+      if(todo.id === id) {
+        return {
+          ...todo,
+        done: !todo.done
+        };
+      }
+    return todo;
+    })
+  );
+}
+ 
   return (
     <div className="App">
       <header className="App-header">
         <p>Todos</p>
         <NewTodoForm addTodo={addTodo} />
-        <TodoList todos={ todos } filter={filter}/>
+        <TodoList todos={ todos } filter={filter} setCompleted={ setCompleted }/>
       </header>
     </div>
   );
