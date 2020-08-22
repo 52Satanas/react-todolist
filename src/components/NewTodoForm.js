@@ -30,6 +30,7 @@ function NewTodoForm( {addTodo}) {
         height= "100 px" 
         value={todo.description}
         onChange={handleTodoInput}
+        placeholder= "What's need to be done?"
         />
         <button type="submit" >Add</button>
     </form>

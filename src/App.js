@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import NewTodoForm from './components/NewTodoForm';
-import TodoList from "./components/TodoList"
+import TodoList from "./components/TodoList";
+import FilterButtons from "./components/FilterButtons"
+
 
 const LOCAL_KEY = "todo-list"
 
@@ -39,14 +41,18 @@ function setCompleted(id) {
     })
   );
 }
- 
+
+function filterChange(newfilter) {
+  console.log(filter);
+  return setFilter(newfilter);
+}
+
   return (
     <div className="App">
-      <header className="App-header">
         <p>Todos</p>
+        <FilterButtons filterChange={ filterChange }/>        
         <NewTodoForm addTodo={addTodo} />
-        <TodoList todos={ todos } filter={filter} setCompleted={ setCompleted }/>
-      </header>
+        <TodoList todos={ todos } filter={filter} setCompleted={ setCompleted } />
     </div>
   );
 }

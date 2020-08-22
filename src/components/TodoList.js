@@ -6,14 +6,14 @@ function TodoList( { todos, filter, setCompleted }) {
     switch (filter) {
         case "completed":
             list = todos.filter( (todo) => 
-                todo.completed === true
+                todo.done === true
             )
             
             break;
         
         case "active":
             list = todos.filter( (todo) => 
-                todo.completed === false
+                todo.done === false
             )
 
             break;        
