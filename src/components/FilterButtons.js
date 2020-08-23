@@ -1,12 +1,24 @@
-import { ButtonGroup, Button } from 'react-bootstrap';
 import React from 'react';
+import { Button, ButtonGroup } from '@material-ui/core'
 
 function FilterButtons({ filterChange }) {
-    return ( <ButtonGroup size="lg" display="flex"> 
-                  <Button onClick={() => filterChange('all')}>All</Button>
-                  <Button onClick={() => filterChange('active')}>Active</Button>
-                  <Button onClick={() => filterChange('completed')}>Completed</Button>
-          </ButtonGroup>);
+    return (<ButtonGroup size="medium" display="flex"> 
+                <Button 
+                    variant="contained" 
+                    color="primary" 
+                    onClick={() => filterChange('all')}>
+                All</Button>
+                <Button 
+                    variant="contained" 
+                    color="primary" 
+                    onClick={() => filterChange('active')}>
+                Active</Button>
+                <Button 
+                    variant="contained" 
+                    color="primary" 
+                    onClick={() => filterChange('completed')}>
+                Completed</Button>
+            </ButtonGroup>);
   
     
 }

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { Button, TextField} from '@material-ui/core';
 
 function NewTodoForm( {addTodo}) {
 
@@ -23,8 +24,8 @@ function NewTodoForm( {addTodo}) {
 
     }
 
-    return <form onSubmit={handleSubmit}>
-        <input
+    return <form className="new-todo" onSubmit={handleSubmit}>
+        <TextField
         name="newTodo"
         type="text"
         height= "100 px" 
@@ -32,7 +33,10 @@ function NewTodoForm( {addTodo}) {
         onChange={handleTodoInput}
         placeholder= "What's need to be done?"
         />
-        <button type="submit" >Add</button>
+        <Button
+            variant="contained" 
+            type="submit" >
+        Add</Button>
     </form>
 }
 

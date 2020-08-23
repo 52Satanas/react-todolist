@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
+import { Typography } from '@material-ui/core';
 import './App.css';
 import NewTodoForm from './components/NewTodoForm';
 import TodoList from "./components/TodoList";
-import FilterButtons from "./components/FilterButtons"
+import FilterButtons from "./components/FilterButtons";
 
 
 const LOCAL_KEY = "todo-list"
@@ -49,10 +50,10 @@ function filterChange(newfilter) {
 
   return (
     <div className="App">
-        <p>Todos</p>
+        <Typography variant="h1">Todos</Typography>
         <FilterButtons filterChange={ filterChange }/>        
         <NewTodoForm addTodo={addTodo} />
-        <TodoList todos={ todos } filter={filter} setCompleted={ setCompleted } />
+        <TodoList className="Todo-List" todos={ todos } filter={filter} setCompleted={ setCompleted } />
     </div>
   );
 }

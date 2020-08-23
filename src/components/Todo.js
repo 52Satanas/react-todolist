@@ -1,4 +1,5 @@
 import React from "react";
+import { Checkbox, ListItem, Typography, Divider, Container } from '@material-ui/core';
 
 function Todo({ todo, setCompleted }) {
 
@@ -7,16 +8,24 @@ function Todo({ todo, setCompleted }) {
     }
 
     return (
-        <div style = {{ display: "flex" }}>
-            <input type="checkbox" onClick= { handleComplete }/>
-            <li
-            style={{
-                color: "white",
-                textDecoration: todo.done ? "line-through" : null
-            }}
-            > 
-            {todo.description} </li>
-        </div>
+        <Container>
+            <ListItem >
+                <Checkbox 
+                    color= "primary"
+                    checked={todo.done}
+                    onClick= { handleComplete }
+                />
+                <Typography
+                variant="body1"
+                style={{
+                    fontWeight: "bolder",
+                    textDecoration: todo.done ? "line-through" : null
+                }}
+                > 
+                {todo.description} </Typography>
+            </ListItem>
+            <Divider />
+        </Container>
     );
 }
 

@@ -1,5 +1,7 @@
 import React from "react";
-import Todo from "./Todo"
+import { List } from '@material-ui/core';
+import Todo from "./Todo";
+import '../App.css';
 
 function TodoList( { todos, filter, setCompleted }) {
     let list;
@@ -24,11 +26,11 @@ function TodoList( { todos, filter, setCompleted }) {
 
 
     return (
-        <ul>
+        <List className="Todo-List">
             {list.map( todo => (
                 <Todo key={todo.id} todo={todo} setCompleted={ setCompleted }/>
             ))}
-        </ul>
+        </List>
     );
 
 }
