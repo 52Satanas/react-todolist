@@ -1,0 +1,21 @@
+.Todo-List {
+    overflow: 'auto';
+    width: 100%;
+    font-size: larger;
+    min-height: 0px;
+    min-width: 0px;
+    padding: flex;
+    flex: content;
+    flex-direction: column;
+    background-color: bisque;
+    border: solid;
+  }
+  
+  .New-Todo {
+    display: flex;
+    flex-direction: row;
+  }
+  li {
+    text-align: center;
+  }
+  

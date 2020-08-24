@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import { Checkbox, ListItem, Typography, Divider, Container, colors } from '@material-ui/core';
-import "../App.css"
+import './Components.css';
 
 function Todo({ todo, setCompleted }) {
 
@@ -10,7 +10,7 @@ function Todo({ todo, setCompleted }) {
 
     return (
         <Container>
-            <ListItem className="Todo">
+            <ListItem className='Todo'>
                 <Checkbox 
                     style ={ {
                         color: colors.green[400],
@@ -21,12 +21,12 @@ function Todo({ todo, setCompleted }) {
                     onClick= { handleComplete }
                 />
                 <Typography
-                variant="body1"
+                variant='body1'
                 style={{
-                    fontFamily:"Helvetica Neue",
+                    fontFamily:'Helvetica Neue',
                     fontSize:30,
-                    fontWeight: todo.done ? "bolder" : "lighter",
-                    textDecoration: todo.done ? "line-through" : null,
+                    fontWeight: todo.done ? 'bolder' : 'lighter',
+                    textDecoration: todo.done ? 'line-through' : null,
                 }}
                 > 
                 {todo.description} </Typography>

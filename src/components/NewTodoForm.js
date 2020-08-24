@@ -5,8 +5,8 @@ import { Button, TextField} from '@material-ui/core';
 function NewTodoForm( {addTodo}) {
 
     const [todo,setTodo] = useState({
-        id: "",
-        description: "",
+        id: '',
+        description: '',
         done: false,   
     });
 
@@ -19,24 +19,24 @@ function NewTodoForm( {addTodo}) {
         e.preventDefault();
         if (todo.description.trim()) {
             addTodo({...todo, id:uuidv4()} )
-            setTodo({ ...todo, description:"" });
+            setTodo({ ...todo, description:'' });
         }
 
     }
 
-    return <form className="New-Todo" style={{padding: "20px" }}onSubmit={handleSubmit}>
+    return <form className='New-Todo' style={{padding: '20px' }}onSubmit={handleSubmit}>
         <TextField
-        name="newTodo"
-        type="text"
-        size= "medium"
+        name='newTodo'
+        type='text'
+        size= 'medium'
         value={todo.description}
         onChange={handleTodoInput}
         placeholder= "What's need to be done?"
         />
         <Button
-            variant="contained" 
-            color="primary"
-            type="submit" >
+            variant='contained' 
+            color='primary'
+            type='submit' >
         Add</Button>
     </form>
 }

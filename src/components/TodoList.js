@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react';
 import { List, Paper } from '@material-ui/core';
-import Todo from "./Todo";
-import '../App.css';
+import Todo from './Todo';
+import './Components.css';
 
 function TodoList( { todos, filter, setCompleted }) {
     let list;
     switch (filter) {
-        case "completed":
+        case 'completed':
             list = todos.filter( (todo) => 
                 todo.done === true
             )
             
             break;
         
-        case "active":
+        case 'active':
             list = todos.filter( (todo) => 
                 todo.done === false
             )
@@ -26,7 +26,7 @@ function TodoList( { todos, filter, setCompleted }) {
 
 
     return (
-            <List className="Todo-List" style={{maxHeight: 400, maxWidth: 600 ,overflow: 'auto'}} >
+            <List className='Todo-List' style={{maxHeight: 400, maxWidth: 600 ,overflow: 'auto'}} >
                 {list.map( todo => (
                     <Todo key={todo.id} todo={todo} setCompleted={ setCompleted }/>
                 ))}
