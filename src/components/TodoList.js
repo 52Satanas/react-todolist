@@ -1,5 +1,5 @@
 import React from "react";
-import { List } from '@material-ui/core';
+import { List, Paper } from '@material-ui/core';
 import Todo from "./Todo";
 import '../App.css';
 
@@ -26,11 +26,11 @@ function TodoList( { todos, filter, setCompleted }) {
 
 
     return (
-        <List className="Todo-List">
-            {list.map( todo => (
-                <Todo key={todo.id} todo={todo} setCompleted={ setCompleted }/>
-            ))}
-        </List>
+            <List className="Todo-List" style={{maxHeight: 400, maxWidth: 600 ,overflow: 'auto'}} >
+                {list.map( todo => (
+                    <Todo key={todo.id} todo={todo} setCompleted={ setCompleted }/>
+                ))}
+            </List>
     );
 
 }

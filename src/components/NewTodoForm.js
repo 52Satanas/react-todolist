@@ -24,17 +24,18 @@ function NewTodoForm( {addTodo}) {
 
     }
 
-    return <form className="new-todo" onSubmit={handleSubmit}>
+    return <form className="New-Todo" style={{padding: "20px" }}onSubmit={handleSubmit}>
         <TextField
         name="newTodo"
         type="text"
-        height= "100 px" 
+        size= "medium"
         value={todo.description}
         onChange={handleTodoInput}
         placeholder= "What's need to be done?"
         />
         <Button
             variant="contained" 
+            color="primary"
             type="submit" >
         Add</Button>
     </form>

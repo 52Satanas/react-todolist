@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, ButtonGroup } from '@material-ui/core'
 
+
 function FilterButtons({ filterChange }) {
     return (<ButtonGroup size="medium" display="flex"> 
                 <Button 
